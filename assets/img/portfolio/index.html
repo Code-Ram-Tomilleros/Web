@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Animaciones</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link href="img/logo.png" rel="icon" />
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+#animacion{
+  color: black;
+  font-weight: bold;
+  font-size: 2em;
+}
+li {
+  margin-bottom: 10px;
+}
+h3 {
+  margin-top: 50px;
+}
+.boton {
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 20px 10px;
+  width: 50%;
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-32" id="animacion"><b>Animaciones<br>CSS</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#inicio" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Qué son</a>
+    <a href="#keyframes" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Keyframes</a>  
+    <a href="#subpropiedades" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Subpropiedades</a> 
+    <a href="#shorthand" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Shorthand</a>
+    <a href="#ejemplo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ejemplo</a>
+    <a href="#ejercicios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ejercicios</a>
+    <a href="#info" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Bibliografía</a> 
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Company Name</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px" id="inicio"> 
+
+  <!-- Que son -->
+  <div class="w3-container" style="margin-top:120px;margin-bottom:120px;" id="que">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Qué son.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Permiten animar la transición entre un estilo CSS y otro. Para ello, constan de <b>dos componentes: propiedades CSS y @keyframes</b>. Su principal ventaja es que son muy fáciles de usar y no es necesario tener conocimientos de Javascript.
+    </p>
+    <p>Las <b>transiciones y animaciones</b> se diferencian en que:
+    </p>
+    <ul>
+      <li>
+        Las transiciones tienen que ser activadas y las animaciones empiezan automáticamente al cargar la página.
+      </li>
+      <li>
+        Las transiciones van de un punto inicial a un punto final, sin etapas intermedias.
+      </li>
+      <li>
+        Además, las transiciones no permiten las repeticiones ni los cambios de dirección.
+      </li>
+    </ul>
+    <div class="w3-half m4 w3-margin-bottom">
+      <div class="w3-container">
+    <img src="https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif?width=600&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif" alt="logo using css text animation" width="600" style="width: 600px; margin: 0px auto; clip-path: polygon(30% 2%, 72% 2%, 72% 48%, 30% 48%);" srcset="https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif?width=300&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif 300w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif?width=600&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif 600w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif?width=900&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif 900w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif?width=1200&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif 1200w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif?width=1500&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif 1500w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif?width=1800&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-21.gif 1800w" sizes="(max-width: 600px) 100vw, 600px">
+    </div>
+    </div>
+    <div class="w3-half m4 w3-margin-bottom">
+      <div class="w3-container">
+    <img src="https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif?width=311&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif" alt="cube animated with 3d transform CSS function" width="311" style="width: 311px; margin: -30px auto 0 auto; clip-path: polygon(2% 14%, 95% 14%, 95% 73%, 2% 73%);" srcset="https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif?width=156&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif 156w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif?width=311&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif 311w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif?width=467&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif 467w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif?width=622&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif 622w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif?width=778&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif 778w, https://blog.hubspot.com/hs-fs/hubfs/The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif?width=933&amp;name=The%20Ultimate%20Guide%20to%20Animations%20in%20CSS-1.gif 933w" sizes="(max-width: 311px) 100vw, 311px">
+    </div>
+    </div>
+  </div>
+  
+  <!-- Keyframes -->
+  <div class="w3-container" style="margin-bottom:150px;" id="keyframes">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Keyframes.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Esta regla es obligatoria y especifica el estilo de un elemento en diferentes etapas. Se puede usar 0% para el principio y 100% para el estado final de la animación o las palabras from y to. Además, pueden especificarse momentos intermedios.
+    </p><br>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-container">
+        <p>
+          @keyframes <span style="color: red;">name</span> {<br>
+            0%   {font-size: 12px;}<br>
+            100% {font-size: 60px;}<br>
+          }<br>
+        </p>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-container">
+        <p>
+          @keyframes <span style="color: red;">name</span> {<br>
+            from   {font-size: 12px;}<br>
+            to {font-size: 60px;}<br>
+          }<br>
+        </p>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-container">
+        <p>
+          @keyframes <span style="color: red;">name</span> {<br>
+            0%   {font-size: 12px;}<br>
+            25%  {font-size: 24px;}<br>
+            50%  {font-size: 36px;}<br>
+            75%  {font-size: 48px;}<br>
+            100% {font-size: 60px;}<br>
+          }<br>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subpropiedades -->
+  <div class="w3-container" id="subpropiedades" style="margin-top:75px"</div>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Subpropiedades.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Con ellas se configura el ritmo y la duración de la animación, así como otros detalles sobre la secuencia de la animación. Las principales subpropidades son:</p><br>
+    <ul>
+      <li><b>animation-name <span style="color:red;">(obligatoria)</span></b>. Especifica el nombre de la animación.</li>
+      <li><b>animation-duration <span style="color:red;">(obligatoria)</span></b>. Especifica el tiempo que dura un ciclo en segundos (s) o milisegundos (ms).</li>
+      <li><b>animation-delay</b>. Especifica el tiempo de espera antes de empezar la animación en s o ms.</li>
+      <li><b>animation-play-state</b>. Especifica si la animación está pausada o en marcha.</li>
+      <li><b>animation-iteration-count</b>. Especifica el número de repeticiones, puede ser un número o infinite.</li>
+      <li><b>animation-direction</b>. Especifica si la animación va hacia delante, hacia atrás o alternando.</li>
+      <li><b>animation-fill-mode</b>. Especifica el estilo del elemento cuando la animación está parada.</li>
+      <li><b>animation-timing-function</b>. Especifica la curva de velocidad de la animación.</li>
+    </ul>
+
+    <h3 style="margin-top: 130px;">Animation-direction</h3>
+    <hr style="width:50px;border:5px solid gray;" class="w3-round">
+    <p>Indica si al finalizar, la animación debe comenzar desde el principio, retroceder hasta el inicio o realizar ciclos alternos. Sus valores pueden ser: <b>normal, reverse, alternate y alternate-reverse</b>.</p><br>
+    <iframe src="https://codepen.io/nunim/pen/BazoEVM" frameborder="0" width="90%" height="400"></iframe>
+
+    <h3>Animation-fill-mode</h3>
+    <hr style="width:50px;border:5px solid gray;" class="w3-round">
+    <p>Especifica qué valores tendrán las propiedades después de finalizar la animación (los de antes de ejecutarla, los del último fotograma de la animación o ambos). Admite los valores: <b>none, forwards, backwards y both</b>.</p><br>
+    <iframe src="https://codepen.io/nunim/pen/RwRWOEY" frameborder="0" width="90%" height="400"></iframe>
+
+    <h3>Animation-timing-function</h3>
+    <hr style="width:50px;border:5px solid gray;" class="w3-round">
+    <p>Indica el ritmo de la animación, es decir, como se muestran los fotogramas de la animación, estableciendo curvas de aceleración. Los principales valores que admite son: <b>ease, ease-in, ease-out, ease-in-out, linear, step-start y step-end</b>.</p><br>
+    <iframe src="https://codepen.io/nunim/pen/oNLjOVq" frameborder="0" width="90%" height="400"></iframe>
+
+  </div>
+
+  <!-- Shorthand -->
+  <div class="w3-container" id="shorthand" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Shorthand.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Es una propiedad con la que, en una sola línea de código, se pueden especificar todas las subpropiedades de la animación. Es fundamental mantener el orden, ya que si no se hace así, la animación no va a funcionar.</p>
+    <div style="text-align:center;">
+      <img src="img/shorthand.png" width="65%" alt="">
+    </div>
+  </div>
+
+  <!-- Ejemplo -->
+  <div class="w3-container" id="ejemplo" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Ejemplo Práctico.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <iframe src="https://codepen.io/andreea_cc/pen/WNxrepr" frameborder="0" width="90%" height="400"></iframe>
+  </div>
+  
+  <!-- Ejercicios -->
+  <div class="w3-container" id="ejercicios" style="margin-top:75px;margin-bottom:120px;">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Ejercicios.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>
+      Aquí os dejamos un link a una página con ejercicios para que pongáis a prueba vuestros conocimientos.
+    </p>
+    <div class="boton">
+      <a href="https://www.w3schools.com/css/exercise.asp?filename=exercise_css3_animations1" target="_blank">Ejercicios W3school</a>
+    </div>
+  </div>
+
+  <!-- Bibliografía -->
+  <div class="w3-container" id="info" style="margin-top:75px;margin-bottom:120px;">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Bibliografía.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>
+      Aquí os dejamos unos links a información adicional que os ayude a entender mejor esta potente propiedad de CSS3.
+    </p>
+    <ul>
+      <li>
+        <a href="https://www.w3schools.com/css/css3_animations.asp" target="_blank">W3schools</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Animations/Usando_animaciones_CSS" target="_blank">MDN Web Docs</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=mE821IzJabc&list=PLROIqh_5RZeAr8dUqO2M52SZDH6pblHe8&index=11" target="_blank">Cubic Bezier()</a>
+      </li>
+      <li>
+        <a href="https://blog.hubspot.com/website/css-animation" target="_blank">The Ultimate Guide to Animations in CSS</a>
+      </li>
+    </ul>
+  </div>
+
+  
+  
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
